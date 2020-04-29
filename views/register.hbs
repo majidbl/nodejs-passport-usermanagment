@@ -1,0 +1,40 @@
+{{> showmsg msg=msg}}
+<form method="post" class="card p-3 mt-5">
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="input" class="form-control shadow-lg rounded" name="username" aria-describedby="emailHelp" placeholder="Enter Username" required>
+  </div>
+  <div class="form-group">
+    <label for="fathername">Father Name</label>
+    <input type="input" class="form-control  shadow-lg rounded" name="fathername" aria-describedby="emailHelp" placeholder="Enter Father Name" required>
+  </div>
+  <div class="form-group">
+    <label for="identitynumber">Identity Number</label>
+    <input type="input" class="form-control shadow-lg rounded" name="identitynumber" aria-describedby="emailHelp" placeholder="Enter Identity Number" required>
+  </div>
+      <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control shadow-lg rounded" id="email1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Gender</label>
+    <select class="form-control shadow-lg rounded" id="exampleFormControlSelect1" name="gen">
+      <option name="male" value="male">Male</option>
+      <option name="female" value="female" >Female</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Birthday</label>
+    <div class="form-inline">
+    <input style='width:5em;text-align:center' type="text" name="year" class="form-control shadow-lg rounded mr-3 ml-1" id="year" placeholder="Year" required>
+    <input style='width:5em;text-align:center' type="text" name="month" class="form-control shadow-lg rounded mr-3" id="month" placeholder="Month" required>
+    <input style='width:5em; text-align: center' type="text" name="day" class="form-control shadow-lg rounded mr-3" id="day" placeholder="Day" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+  </div>
+  <button type="submit" class="btn btn-primary rounded shadow-lg">Submit</button>
+</form>

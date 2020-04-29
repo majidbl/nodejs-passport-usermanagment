@@ -1,0 +1,33 @@
+{{> showmsg msg=msg}}
+
+<div class="container pt-2">
+<table id="example" class="table-responsive shadow-lg rounded-lg">
+  <thead >
+    <tr>
+      <th scope="col" style="text-align:center; padding:10px">آیدی</th>
+      <th scope="col" style="text-align:center; padding:20px; padding-right:40px; padding-left:40px">نام کاربری</th>
+      <th scope="col" style="text-align: center;
+    height:2em;">نام پدر</th>
+      <th style="text-align: center;" scope="col">شماره ملی  </th>
+      <th scope="col" style="text-align:center;">ایمیل</th>
+      <th>گزینه‌ها</th>
+    </tr>
+  </thead>
+  <tbody >
+    {{#each users}}
+    <tr scope="row">
+      <td style="text-align:center; padding:10px">{{id}}</td>
+      <td style="text-align:center; padding:10px">{{username}}</td>
+      <td style="text-align: center;
+    height:2em; padding:10px;">{{fathername}}</td>
+      <td style="text-align:center; padding:10px">{{identitynumber}}</td>
+      <td style="text-align:center; padding:10px">{{email}}</td>
+      <td style="text-align:center; padding:10px"><a href="/users/dashboard/user/{{id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+    </tr>
+{{/each}}
+  </tbody>
+</table>
+</div>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css " />
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
