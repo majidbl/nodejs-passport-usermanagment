@@ -9,20 +9,7 @@ var cookieParser = require('cookie-parser');
 const Nuser = require('./model');
 
 app.use(express.static('public'))
-// force: true will drop the table if it already exists
-/**Nuser.sync(//{force: true}
-          ).then(function () {
-  // Table created
-  console.log("Table created successfully!!!!!!");
-});**/
-/**Nuser.create({
-  firstName:"Majid zare",
-  fathername:"Ali",
-  email:"majidzarephysics@gmail.com",
-  identitynumber:"5080075066",
-  birthday:Date()
-}).then(() => console.log("new user inserted"));
-**/
+
 const passport = require('passport');
 require('./config/passport')(passport);
 var sessionStore = new session.MemoryStore();
@@ -53,7 +40,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use('/users', userroute);
-//app.set('views', path.join(__dirname, 'views'));
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
@@ -79,5 +65,5 @@ var server = app.listen(8081, function () {
    var host = server.address().address;
    var port = server.address().port;
    
-   console.log("Example app listening at http://%s:%s", host, port);
+   console.log("app listening at http://%s:%s", host, port);
 });

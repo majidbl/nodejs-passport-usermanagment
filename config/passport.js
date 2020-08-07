@@ -13,8 +13,6 @@ module.exports = function(passport) {
            return done(null, false)
          }
          if (user.password !== password) {
-           console.log(username.password)
-           console.log("vvvvvvvvvvvv");
            return done(null, false);
          }
          return done(null, user);
@@ -29,16 +27,11 @@ module.exports = function(passport) {
   passport.deserializeUser(function(id, done){
     User.findByPk(id).then(function(user) {
  
-        if (user) {
- 
+        if (user) { 
             done(null, user.get());
- 
         } else {
- 
             done(user.errors, null);
- 
         }
- 
     });
 }); 
 };

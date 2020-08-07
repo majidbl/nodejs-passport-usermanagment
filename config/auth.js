@@ -5,8 +5,7 @@ module.exports = {
     }else{
       req.session.sessionFlash = {
         type: 'danger',
-        message: `Please log in to view that resource`
-        
+        message: `Please log in to view that resource` 
       };
       res.redirect('/users/login');
     }

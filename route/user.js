@@ -12,13 +12,11 @@ router.get('/', islogged, function(req, res){
     {
       var jusers = JSON.stringify(data);
       var users = JSON.parse(jusers);
-      //console.log(req.user.username);
-      //console.log(req);
+
       var err = [];
       err.push({type:"success",ms:"partial work correctly"});
       err.push({type:"danger",ms:"Test partial with other data"})
       err.push({type:"success",ms:"Well come To Administer Profile Page"})
-      //console.log(req.user.role);
       res.render('dashboard', 
       {users:users,msg:err});
     });
@@ -27,13 +25,10 @@ router.get('/', islogged, function(req, res){
     {
       var jusers = JSON.stringify(data);
       var users = JSON.parse(jusers);
-      //console.log(req.user.username);
-      //console.log(req);
       var err = [];
       err.push({type:"success",ms:"partial work correctly"});
       err.push({type:"danger",ms:"Test partial with other data"})
       err.push({type:"success",ms:"Well come To your Profile Page"})
-      //console.log(req.user.role);
       res.render('profile', 
       {users:users,msg:err});
     });
@@ -47,17 +42,13 @@ router.get('/dashboard/user/:id', islogged, function(req, res){
       if(req.user.role == 'admin'){
       var jusers = JSON.stringify(data);
       var users = JSON.parse(jusers);
-      //console.log(req.user.username);
-      //console.log(req);
       var err = [];
       err.push({type:"success",ms:`Well come To ${data.username} Profile Page`})
-      //console.log(req.user.role);
       res.render('profile', 
       {users:users,msg:err});
   }else if(req.user.role == 'member'){
       var err = [];
       err.push({type:"danger",ms:"Only admin can Access to Member Profile. Please login as Admin"});
-      //console.log(req.user.role);
       res.render('login', 
       {users:users,msg:err});
   }

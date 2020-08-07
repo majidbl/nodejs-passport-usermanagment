@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 // Or you can simply use a connection uri
-var sequelize = new Sequelize('postgres://majid72bl:5080075066@localhost:5432/mydb', { define: {
+var sequelize = new Sequelize('postgres://username:password@localhost:5432/dbname', { define: {
         //prevent sequelize from pluralizing table names
         freezeTableName: true
     }});
